@@ -3,6 +3,14 @@
 {
   home.username = "zyph";
   home.homeDirectory = "/home/zyph";
+  home.stateVersion = "23.11";
+
+  xdg.configFile = {
+    "rofi" = {
+     source = config.lib.file.mkOutOfStoreSymlink "/home/zyph/dotfiles/.config/rofi";
+    };
+  };
+
   home.packages = with pkgs; [
     zsh
     alacritty
@@ -34,8 +42,6 @@
     gnome.gnome-keyring
     gcr
   ];
-
-  home.stateVersion = "23.11";
 
   programs.home-manager.enable = true;
 
